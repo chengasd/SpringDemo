@@ -39,15 +39,23 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() throws Exception {
-		System.out.println(demoBeanProperties.getName());
-		System.out.println(demoBeanProperties.getDesc());
-		Assert.assertEquals(demoBeanProperties.getName(), "miachelyin");
-		Assert.assertEquals(demoBeanProperties.getTitle(),"values");
-//        MvcResult result =mvc.perform(MockMvcRequestBuilders.get("/hello")  //执行一个RequestBuilder请求，会自动执行SpringMVC的流程并映射到相应的控制器执行处理；
-//                .accept(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isOk())  //andExpect 添加ResultMatcher验证规则，验证控制器执行完成后结果是否正确；
-//                .andDo(print())             //添加ResultHandler结果处理器，比如调试时打印结果到控制台；
-//                .andReturn();
+//		DemoBeanProperties vc = (DemoBeanProperties) wac.getBean("DemoBeanProperties");
+//		System.out.println(vc.getName());
+//		System.out.println(vc.getDesc());
+//		Assert.assertEquals(demoBeanProperties.getName(), "miachelyin");
+//		Assert.assertEquals(demoBeanProperties.getTitle(),"Spring BootDemo");
+        MvcResult result =mvc.perform(MockMvcRequestBuilders.get("/hello")  //执行一个RequestBuilder请求，会自动执行SpringMVC的流程并映射到相应的控制器执行处理；
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())  //andExpect 添加ResultMatcher验证规则，验证控制器执行完成后结果是否正确；
+                .andDo(print())             //添加ResultHandler结果处理器，比如调试时打印结果到控制台；
+                .andReturn();
+
+//		MvcResult result =mvc.perform(MockMvcRequestBuilders.get("/test/test1.do")
+//				.accept(MediaType.APPLICATION_JSON))
+//				.andExpect(status().isOk())
+//				.andDo(print())
+//				.andReturn();
+		System.out.println(result.getResponse().getContentAsString());
 	}
 
 }
