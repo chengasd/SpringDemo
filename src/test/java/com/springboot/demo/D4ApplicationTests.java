@@ -14,6 +14,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringBootTest(classes = Application.class)
 public class D4ApplicationTests {
 
+    /**
+     * swagger restful 接口链接
+     * http://localhost:8080/swagger-ui.html
+     *
+     */
+
     @Autowired
     private UserService userSerivce;
 
