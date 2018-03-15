@@ -1,7 +1,24 @@
 package com.springboot.D2;
 
-public class User {
+import java.io.Serializable;
 
+public class User implements Serializable {
+
+    private static final long serialVersionUID = -1L;
+
+    public User(Long id,String name,Integer age){
+        this.id = id;
+        this.age = age;
+        this.name = name;
+    }
+
+    public User(String name,Integer age){
+        this.age = age;
+        this.name = name;
+    }
+    public User(){
+
+    }
     private Long id;
     private String name;
     private Integer age;
