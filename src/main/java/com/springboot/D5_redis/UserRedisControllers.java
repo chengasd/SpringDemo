@@ -2,6 +2,7 @@ package com.springboot.D5_redis;
 
 import com.springboot.D2.User;
 import com.springboot.D4.UserService;
+import com.springboot.annotation.MyLog;
 import com.springboot.dao.TestUserDaoImpl;
 import com.springboot.dao.TestUserExample;
 import com.springboot.domain.TestUser;
@@ -26,6 +27,7 @@ public class UserRedisControllers {
     @Autowired
     private TestUserDaoImpl userDaoImpl;
 
+    @MyLog
     @RequestMapping(value = "/userinfos", method = RequestMethod.GET)
     public List<TestUser> getUserList() {
         List<String> r = userService.getAllUsersInfo();
