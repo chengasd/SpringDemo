@@ -1,9 +1,18 @@
 package com.springboot.Test;
 
+import com.springboot.D2.User;
+
 import java.lang.reflect.Field;
 
 public class Test {
     public static void main(String[] args) {
+        Boolean[] ccc = new Boolean[1];
+        if (ccc[0]){
+            System.out.println("ttt");
+        }
+        User user1 = new User("a");
+        User user2 = new User("a");
+        System.out.println(user1.equals(user2));
         Integer a = 1 ;
         Integer b = 2 ;
         System.out.println("before : a = "+ a +" b = " + b);

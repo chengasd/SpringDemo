@@ -26,6 +26,21 @@ public class MyLogAspect {
 
 	public static final String WARN = "warn";
 
+	// execution：用于匹配方法执行的连接点
+
+	// 匹配HelloApplication类里头的所有方法
+	//@Pointcut(value = "within(com.springboot.D3.HelloApplication)")
+	//  用于匹配当前AOP代理对象类型的执行方法；注意是AOP代理对象的类型匹配，这样就可能包括引入接口也类型匹配；
+	//@Pointcut(value = "this(com.springboot.D3.HelloApplication)")
+	//  用于匹配当前目标对象类型的执行方法；注意是目标对象的类型匹配，这样就不包括引入接口也类型匹配
+	//@Pointcut(value = "target(com.springboot.D3.HelloApplication)")
+	//  匹配所有以Service结尾的bean里头的方法
+	//@Pointcut(value = "bean(*Service)")
+	//  匹配任何只有一个Long参数的方法
+	//@Pointcut(value = "args(Long)")
+	//  匹配任何以find开头的而且第一个参数为Long的方法
+	//@Pointcut(value = "execution(**..find*(Long,..))")
+
 	//切入点
 	@Pointcut(value = "@annotation(com.springboot.annotation.MyLog)")
 	private void pointcut() {
