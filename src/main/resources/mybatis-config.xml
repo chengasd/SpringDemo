@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 重用, 创建的 Statement 对象不会查询一次后销毁. -->
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <!-- 驼峰映射, 如 数据库中 字段 created_at 自动映射为 createdAt. -->
+        <!--<setting name="mapUnderscoreToCamelCase" value="true"/>-->
+    </settings>
+
+    <plugins>
+        <plugin interceptor="com.springboot.D14_mybatisInteceptor.UserPlugin"/>
+    </plugins>
+
+</configuration>

@@ -55,4 +55,8 @@ public class TestUserDaoImpl {
     public int updateByPrimaryKey(TestUser record) {
         return 0;
     }
+
+    public List<TestUser> queryUsers(TestUserExample example) {
+        return userDao.selectByExample(example);
+    }
 }

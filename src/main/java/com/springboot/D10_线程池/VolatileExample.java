@@ -7,6 +7,7 @@ public class VolatileExample extends Thread {
     //无限循环,等待flag变为true时才跳出循环
     //注释中间i两行，会无限循环
     //因为线程中的变量副本对应的内存值和主内存中值未实时同步， 如果变量为volatile，读取变量值时，会判断变量副本是无效的，再从主内存中获取。
+    @Override
     public void run() {
         int i = 0;
         while (!flag) {
