@@ -15,6 +15,7 @@ public class CpuMain {
     }
 
     private void runTest() throws Exception{
+        //可用的处理器数量
         int count = Runtime.getRuntime().availableProcessors();
         for (int i =0; i<count; i++) {
             Thread tt = new Thread(new CpuTask());
